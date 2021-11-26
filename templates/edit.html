@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Admin dash</title>
+
+        <link rel="icon" type="image/x-icon" href="    {{ url_for('static', filename='assets/favicon.ico')}}   " />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{{url_for('static',filename='css/styles.css')}}" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- nav -->
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                
+                
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/login">Sign Out</a></li>
+                        
+                        
+                       
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- page header -->
+
+         
+
+
+        <header class="masthead" style="background-image: url('{{post.img |safe}}')" >
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>Edit post :</h1>
+                            <span class="subheading">{{post.title}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+       
+
+<main class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div style="padding-top:7rem;" class="col-md-10 col-lg-8 col-xl-7 new" >
+
+
+
+       <form id="contactForm" data-sb-form-api-token="API_TOKEN" action="/edit/{{post.sno}}" method="post">
+                                <div class="form-floating">
+                                    <input class="form-control" name="title" id="title" type="text" placeholder="Enter the title..." value="{{post.title}}" data-sb-validations="required" />
+                                    <label for="name">Title</label>
+                                    <div class="invalid-feedback" data-sb-feedback="name:required">A title is required.</div>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" name="slug" value="{{post.slug}}" id="slug" type="text" placeholder="Enter the slug..." data-sb-validations="required,email" />
+                                    <label for="email">Enter the slug</label>
+                                    <div class="invalid-feedback" data-sb-feedback="text:required">A slug is required.</div>
+                               
+                                
+                                <div class="form-floating">
+                                    <input class="form-control" name="image" value="{{post.img}}" id="image" type="text" placeholder="img url..." data-sb-validations="required" />
+                                    <label for="phone">Img url...</label>
+                                    <div class="invalid-feedback" data-sb-feedback="text:required">a url is required.</div>
+                                </div>
+                                <div class="form-floating">
+                                    <textarea class="form-control" name="content" id="content" placeholder="Enter your content here..." style="height: 12rem" data-sb-validations="required">{{post.content}}</textarea>
+                                    <label for="content">Content</label>
+                                    <div class="invalid-feedback" data-sb-feedback="content:required">A content is required.</div>
+                                </div>
+                                <br />
+                                <!-- Submit success message-->
+                                <!---->
+                                <!-- This is what your users will see when the form-->
+                                <!-- has successfully submitted-->
+                                <div class="d-none" id="submitSuccessMessage">
+                                    <div class="text-center mb-3">
+                                        <div class="fw-bolder">Form submission successful!</div>
+                                        To activate this form, sign up at
+                                        <br />
+                                        <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                                    </div>
+                                </div>
+                                <!-- Submit error message-->
+                                <!---->
+                                <!-- This is what your users will see when there is-->
+                                <!-- an error submitting the form-->
+                                <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                                <!-- Submit Button-->
+                                <button class="btn btn-primary text-uppercase" id="submitButton" type="submit">Post</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>

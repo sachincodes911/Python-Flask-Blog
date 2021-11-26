@@ -1,0 +1,19 @@
+{
+  "params":
+  {
+    "local_server": "True",
+    "local_uri": "mysql://root:@localhost/codeguru",
+    "prod_uri": "mysql://root:@localhost/codeguru",
+    "fb_url": "https://facebook.com/",
+    "tw_url": "https://twitter.com/",
+    "git_url":"https://github.com/",
+    "mail_id": "usenthrowa@gmail.com",
+    "mail_pass": "jinni911",
+    "recp_mail_id": "sachinsarma.sarma@gmail.com",
+    "about_txt": "Hi my name is sachin and i am new to programming so i am working hard to learn it",
+    "no_of_post": 2,
+    "admin_id": "sachin@123",
+    "admin_pass": "0000"
+
+  }
+}
